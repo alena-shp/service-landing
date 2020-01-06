@@ -1,8 +1,8 @@
 # .prettierrc or .prettierrc.yaml
-trailingComma: "none"
+trailingComma: 'none'
 semi: false
 tabWidth: 2
-singleQuote: false
-endOfLine: "lf"
+singleQuote: true
+endOfLine: 'lf'
 printWidth: 80
 plugin1/rule1: error
