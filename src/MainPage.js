@@ -203,7 +203,6 @@ const MainPage = () => {
             <p className="sectoin-footer__links-copyright">
               Copyright © 2020 All Right Reserved
             </p>
-
             <ul className="sectoin-footer__links-help">
               <li>
                 <a href="#0">Privacy Policy</a>

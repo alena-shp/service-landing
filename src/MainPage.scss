@@ -1,11 +1,11 @@
 @import 'normalize.scss';
 
 // === mixins ===
-@mixin lato {
+@mixin font-main {
   font-family: 'Lato', sans-serif;
 }
 
-@mixin montserrat {
+@mixin font-secondary {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -13,6 +13,12 @@
 
 // === variables ===
 $color-white: #ffffff;
+$color-blue-white: #ebfbff;
+$color-blue-light: #3d97b3;
+$color-blue: #4750b6;
+$color-gray-light: #6c6c6c;
+$color-gray: #414141;
+$color-black: #000000;
 // === / variables ===
 
 // === common ===
@@ -20,7 +26,7 @@ $color-white: #ffffff;
   box-sizing: border-box;
 }
 body {
-  @include lato;
+  @include font-main;
 }
 
 .section-inner {
@@ -38,7 +44,7 @@ body {
     line-height: 22px;
   }
   p {
-    color: #6c6c6c;
+    color: $color-gray-light;
     font-size: 16px;
     font-weight: 300;
     margin-top: 14px;
@@ -47,7 +53,7 @@ body {
 }
 
 @mixin start-button {
-  @include montserrat;
+  @include font-secondary;
 
   border-radius: 4px;
   font-size: 16px;
@@ -61,23 +67,38 @@ body {
 
 .btn-primary {
   @include start-button;
-  background: linear-gradient(to right, #4750b6, #3d97b3);
+  background: linear-gradient(to right, $color-blue, $color-blue-light);
   border: none;
   color: $color-white;
+
+  &:hover {
+    background: linear-gradient(to right, $color-blue-light, $color-blue);
+  }
 }
 
 .btn-secondary {
   @include start-button;
-  border: 1px solid #414141;
+  border: 1px solid $color-gray;
   background-color: $color-white;
-  color: #414141;
+  color: $color-gray;
+  transition: 0.2s;
+
+  &:hover {
+    border: 1px solid $color-blue-light;
+    color: $color-blue-light;
+  }
 }
 
 .btn-free {
   @include start-button;
   border: none;
   background-color: $color-white;
-  color: #414141;
+  color: $color-gray;
+  transition: 0.2s;
+
+  &:hover {
+    color: $color-blue-light;
+  }
 }
 
 // === / common ===
@@ -135,7 +156,7 @@ body {
       margin-bottom: 16px;
     }
     &__text {
-      @include montserrat;
+      @include font-secondary;
       font-size: 18px;
       line-height: 32px;
       width: 70%;
@@ -150,7 +171,7 @@ body {
         padding-right: 40px;
 
         input {
-          @include montserrat;
+          @include font-secondary;
 
           background: rgba(255, 255, 255, 0.25);
           border: none;
@@ -161,9 +182,14 @@ body {
           outline: none;
           padding: 16px 20px;
           width: 100%;
+          transition: 0.2s;
 
           &::placeholder {
             color: $color-white;
+          }
+
+          &:focus {
+            background: rgba(255, 255, 255, 0.5);
           }
         }
       }
@@ -206,7 +232,7 @@ body {
     display: flex;
     margin-top: 120px;
     padding-top: 86px;
-    border-top: 1px solid #e2e2e2;
+    border-top: 1px solid #cfcfcf;
     text-align: center;
 
     .description__item + .description__item {
@@ -219,7 +245,7 @@ body {
 
 // === founder ===
 .sectoin-founder {
-  background-color: #f1fcff;
+  background-color: $color-blue-white;
   padding-top: 34px;
 
   .section-inner {
@@ -237,11 +263,12 @@ body {
     padding-left: 50px;
 
     &-text {
-      @include montserrat;
+      @include font-secondary;
 
       font-size: 24px;
       line-height: 40px;
       text-align: justify;
+      margin-bottom: 10px;
     }
     &-name {
       font-size: 24px;
@@ -273,7 +300,7 @@ body {
     font-weight: 300;
     width: 50%;
     margin: 0 auto 80px;
-    color: #6c6c6c;
+    color: $color-gray-light;
   }
   &__list {
     display: flex;
@@ -294,13 +321,13 @@ body {
         font-size: 72px;
         line-height: 86px;
         font-weight: bold;
-        color: #3d97b3;
+        color: $color-blue-light;
 
         span {
           font-size: 14px;
           line-height: 17px;
           font-weight: bold;
-          color: black;
+          color: $color-black;
         }
       }
       &_description {
@@ -308,9 +335,10 @@ body {
         line-height: 28px;
         font-weight: 300;
         margin-bottom: 50px;
+        color: $color-gray-light;
       }
       &.active {
-        background-color: #f1fcff;
+        background-color: $color-blue-white;
       }
     }
   }
@@ -321,7 +349,7 @@ body {
 .sectoin-offer {
   text-align: center;
   color: $color-white;
-  background: linear-gradient(to right, #4750b6, #3d97b3);
+  background: linear-gradient(to right, $color-blue, $color-blue-light);
   padding-bottom: 120px;
   padding-top: 120px;
 
@@ -332,7 +360,7 @@ body {
     margin-bottom: 26px;
   }
   &__text {
-    @include montserrat;
+    @include font-secondary;
 
     font-size: 20px;
     line-height: 30px;
@@ -369,17 +397,19 @@ body {
         font-size: 14px;
         line-height: 20px;
         font-weight: bold;
-        color: #464646;
+        color: $color-gray;
         text-decoration: none;
+        transition: 0.2s;
 
-        &.active {
-          color: #3d97b3;
+        &.active,
+        &:hover {
+          color: $color-blue-light;
         }
       }
     }
   }
   &__links {
-    @include montserrat;
+    @include font-secondary;
     display: flex;
     justify-content: space-between;
     width: 60%;
@@ -399,11 +429,10 @@ body {
         }
 
         a {
-          color: #464646;
+          color: $color-gray;
           text-decoration: none;
-
-          &.active {
-            color: #3d97b3;
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
