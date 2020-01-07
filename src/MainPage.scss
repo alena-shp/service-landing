@@ -27,6 +27,59 @@ body {
   width: 1180px;
   margin: 0 auto;
 }
+
+.description__item {
+  img {
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 22px;
+  }
+  p {
+    color: #6c6c6c;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 14px;
+    line-height: 24px;
+  }
+}
+
+@mixin start-button {
+  @include montserrat;
+
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 0;
+  outline: none;
+  padding: 16px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary {
+  @include start-button;
+  background: linear-gradient(to right, #4750b6, #3d97b3);
+  border: none;
+  color: $color-white;
+}
+
+.btn-secondary {
+  @include start-button;
+  border: 1px solid #414141;
+  background-color: $color-white;
+  color: #414141;
+}
+
+.btn-free {
+  @include start-button;
+  border: none;
+  background-color: $color-white;
+  color: #414141;
+}
+
 // === / common ===
 
 // === header ===
@@ -83,7 +136,7 @@ body {
     }
     &__text {
       @include montserrat;
-      font-size: 18px; 
+      font-size: 18px;
       line-height: 32px;
       width: 70%;
       margin: 0 auto 44px;
@@ -99,7 +152,7 @@ body {
         input {
           @include montserrat;
 
-          background: rgba(255, 255, 255, .25);
+          background: rgba(255, 255, 255, 0.25);
           border: none;
           border-radius: 4px;
           color: $color-white;
@@ -112,24 +165,6 @@ body {
           &::placeholder {
             color: $color-white;
           }
-
-        }
-      }
-
-      &-button {
-        button {
-          @include montserrat;
-
-          background: linear-gradient(to right,  #4750b6, #3d97b3);
-          border: none;
-          border-radius: 4px;
-          color: $color-white;
-          font-size: 16px;
-          margin: 0;
-          outline: none;
-          padding: 16px 20px;
-          width: 100%;
-
         }
       }
     }
@@ -139,16 +174,240 @@ body {
 // === / header ===
 
 // === promo ===
+.sectoin-promo {
+  padding-bottom: 120px;
+  padding-top: 120px;
+
+  &-main {
+    display: flex;
+
+    &__content,
+    &__video {
+      flex-basis: 50%;
+    }
+
+    &__content {
+      padding-right: 90px;
+
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 36px;
+      }
+
+      .description__item {
+        h3 {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+  &-secondary {
+    display: flex;
+    margin-top: 120px;
+    padding-top: 86px;
+    border-top: 1px solid #e2e2e2;
+    text-align: center;
+
+    .description__item + .description__item {
+      margin-left: 40px;
+    }
+  }
+}
+
 // === / promo ===
 
 // === founder ===
+.sectoin-founder {
+  background-color: #f1fcff;
+  padding-top: 34px;
+
+  .section-inner {
+    display: flex;
+  }
+
+  &__img {
+    align-self: flex-end;
+    img {
+      width: 500px;
+    }
+  }
+  &__content {
+    align-self: center;
+    padding-left: 50px;
+
+    &-text {
+      @include montserrat;
+
+      font-size: 24px;
+      line-height: 40px;
+      text-align: justify;
+    }
+    &-name {
+      font-size: 24px;
+      line-height: 29px;
+      font-weight: bold;
+    }
+    &-position {
+      font-size: 20px;
+      line-height: 29px;
+    }
+  }
+}
 // === / founder ===
 
 // === plans ===
+.sectoin-plans {
+  padding-bottom: 120px;
+  padding-top: 120px;
+  text-align: center;
+
+  &__title {
+    font-size: 36px;
+    line-height: 51px;
+    font-weight: bold;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 300;
+    width: 50%;
+    margin: 0 auto 80px;
+    color: #6c6c6c;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    &-item {
+      flex-basis: 370px;
+      padding: 60px 45px;
+
+      &_title {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: bold;
+        margin-bottom: 26px;
+      }
+      &_price {
+        margin-bottom: 26px;
+        font-size: 72px;
+        line-height: 86px;
+        font-weight: bold;
+        color: #3d97b3;
+
+        span {
+          font-size: 14px;
+          line-height: 17px;
+          font-weight: bold;
+          color: black;
+        }
+      }
+      &_description {
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 300;
+        margin-bottom: 50px;
+      }
+      &.active {
+        background-color: #f1fcff;
+      }
+    }
+  }
+}
 // === / plans ===
 
 // === offer ===
+.sectoin-offer {
+  text-align: center;
+  color: $color-white;
+  background: linear-gradient(to right, #4750b6, #3d97b3);
+  padding-bottom: 120px;
+  padding-top: 120px;
+
+  &__title {
+    font-size: 66px;
+    line-height: 60px;
+    font-weight: bold;
+    margin-bottom: 26px;
+  }
+  &__text {
+    @include montserrat;
+
+    font-size: 20px;
+    line-height: 30px;
+    width: 50%;
+    margin: 0 auto 40px;
+  }
+}
 // === / offer ===
 
 // === footer ===
+.sectoin-footer {
+  padding-bottom: 80px;
+  padding-top: 80px;
+  &__logo {
+    text-align: center;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 60px;
+    padding: 0;
+    list-style: none;
+
+    li {
+      & + li {
+        margin-left: 60px;
+      }
+
+      a {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        color: #464646;
+        text-decoration: none;
+
+        &.active {
+          color: #3d97b3;
+        }
+      }
+    }
+  }
+  &__links {
+    @include montserrat;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 18px;
+
+    &-help {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        & + li {
+          margin-left: 20px;
+        }
+
+        a {
+          color: #464646;
+          text-decoration: none;
+
+          &.active {
+            color: #3d97b3;
+          }
+        }
+      }
+    }
+  }
+}
 // === / footer ===
