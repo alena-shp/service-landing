@@ -30,8 +30,8 @@ body {
 }
 
 .section-inner {
-  width: 1180px;
   margin: 0 auto;
+  width: 1180px;
 }
 
 .description__item {
@@ -56,13 +56,13 @@ body {
   @include font-secondary;
 
   border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
   font-size: 16px;
   margin: 0;
   outline: none;
   padding: 16px 20px;
   text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
 }
 
 .btn-primary {
@@ -112,33 +112,33 @@ body {
 
   &::before {
     content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
+    background-color: rgba(20, 38, 40, 0.6);
     bottom: 0;
     left: 0;
-    background-color: rgba(20, 38, 40, 0.6);
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 5;
   }
 
   .section-inner {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     position: relative;
     z-index: 10;
-    display: flex;
-    flex-direction: column;
   }
   &-logo {
-    font-weight: bold;
     font-size: 24px;
     flex-shrink: 1;
+    font-weight: bold;
     padding-top: 36px;
   }
 
   &-content {
-    flex-grow: 1;
     align-items: center;
     display: flex;
+    flex-grow: 1;
   }
 
   &-wrapper {
@@ -150,17 +150,17 @@ body {
     }
 
     &__title {
-      font-weight: bold;
       font-size: 56px;
-      line-height: 60px;
+      font-weight: bold;
       margin-bottom: 16px;
+      line-height: 60px;
     }
     &__text {
       @include font-secondary;
       font-size: 18px;
+      margin: 0 auto 44px;
       line-height: 32px;
       width: 70%;
-      margin: 0 auto 44px;
     }
 
     &__form {
@@ -181,8 +181,8 @@ body {
           margin: 0;
           outline: none;
           padding: 16px 20px;
-          width: 100%;
           transition: 0.2s;
+          width: 100%;
 
           &::placeholder {
             color: $color-white;
@@ -229,10 +229,10 @@ body {
     }
   }
   &-secondary {
+    border-top: 1px solid #cfcfcf;
     display: flex;
     margin-top: 120px;
     padding-top: 86px;
-    border-top: 1px solid #cfcfcf;
     text-align: center;
 
     .description__item + .description__item {
@@ -266,14 +266,14 @@ body {
       @include font-secondary;
 
       font-size: 24px;
+      margin-bottom: 10px;
       line-height: 40px;
       text-align: justify;
-      margin-bottom: 10px;
     }
     &-name {
       font-size: 24px;
-      line-height: 29px;
       font-weight: bold;
+      line-height: 29px;
     }
     &-position {
       font-size: 20px;
@@ -291,16 +291,16 @@ body {
 
   &__title {
     font-size: 36px;
-    line-height: 51px;
     font-weight: bold;
+    line-height: 51px;
   }
   &__text {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 300;
-    width: 50%;
-    margin: 0 auto 80px;
     color: $color-gray-light;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 0 auto 80px;
+    width: 50%;
   }
   &__list {
     display: flex;
@@ -312,30 +312,30 @@ body {
 
       &_title {
         font-size: 14px;
-        line-height: 17px;
         font-weight: bold;
         margin-bottom: 26px;
+        line-height: 17px;
       }
       &_price {
-        margin-bottom: 26px;
-        font-size: 72px;
-        line-height: 86px;
-        font-weight: bold;
         color: $color-blue-light;
+        font-size: 72px;
+        font-weight: bold;
+        line-height: 86px;
+        margin-bottom: 26px;
 
         span {
-          font-size: 14px;
-          line-height: 17px;
-          font-weight: bold;
           color: $color-black;
+          line-height: 17px;
+          font-size: 14px;
+          font-weight: bold;
         }
       }
       &_description {
+        color: $color-gray-light;
         font-size: 16px;
-        line-height: 28px;
         font-weight: 300;
         margin-bottom: 50px;
-        color: $color-gray-light;
+        line-height: 28px;
       }
       &.active {
         background-color: $color-blue-white;
@@ -347,25 +347,25 @@ body {
 
 // === offer ===
 .sectoin-offer {
-  text-align: center;
   color: $color-white;
   background: linear-gradient(to right, $color-blue, $color-blue-light);
+  text-align: center;
   padding-bottom: 120px;
   padding-top: 120px;
 
   &__title {
     font-size: 66px;
-    line-height: 60px;
     font-weight: bold;
     margin-bottom: 26px;
+    line-height: 60px;
   }
   &__text {
     @include font-secondary;
 
     font-size: 20px;
+    margin: 0 auto 40px;
     line-height: 30px;
     width: 50%;
-    margin: 0 auto 40px;
   }
 }
 // === / offer ===
@@ -375,18 +375,18 @@ body {
   padding-bottom: 80px;
   padding-top: 80px;
   &__logo {
-    text-align: center;
     font-size: 24px;
-    line-height: 29px;
     font-weight: bold;
     margin-bottom: 30px;
+    line-height: 29px;
+    text-align: center;
   }
   &__nav {
     display: flex;
     justify-content: center;
     margin: 0 0 60px;
-    padding: 0;
     list-style: none;
+    padding: 0;
 
     li {
       & + li {
@@ -394,10 +394,10 @@ body {
       }
 
       a {
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: bold;
         color: $color-gray;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: bold;
         text-decoration: none;
         transition: 0.2s;
 
@@ -410,18 +410,18 @@ body {
   }
   &__links {
     @include font-secondary;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
-    width: 60%;
     margin: 0 auto;
-    font-size: 14px;
     line-height: 18px;
+    width: 60%;
 
     &-help {
       display: flex;
       margin: 0;
-      padding: 0;
       list-style: none;
+      padding: 0;
 
       li {
         & + li {
